@@ -1,0 +1,10 @@
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\bin\Debug\Gualab.exe.config
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\bin\Debug\Gualab.exe
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\bin\Debug\Gualab.pdb
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.Form1.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.Properties.Resources.resources
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.csproj.GenerateResource.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.exe
+C:\Users\Usuario\Documents\Visual Studio 2017\Projects\Gualab\Gualab\obj\Debug\Gualab.pdb
