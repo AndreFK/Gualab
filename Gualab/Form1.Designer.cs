@@ -43,6 +43,7 @@
             this.BicepCircumference_lbl = new System.Windows.Forms.Label();
             this.LeftRight_lbl = new System.Windows.Forms.Label();
             this.lr_dud = new System.Windows.Forms.DomainUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hw_tb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hw_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.al_nud)).BeginInit();
@@ -256,11 +257,22 @@
             this.lr_dud.TabIndex = 138;
             this.lr_dud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(324, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 139;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lr_dud);
             this.Controls.Add(this.LeftRight_lbl);
             this.Controls.Add(this.BicepCircumference_lbl);
@@ -278,6 +290,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Gualab";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hw_tb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hw_nud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.al_nud)).EndInit();
@@ -307,6 +320,7 @@
         private System.Windows.Forms.Label BicepCircumference_lbl;
         private System.Windows.Forms.Label LeftRight_lbl;
         private System.Windows.Forms.DomainUpDown lr_dud;
+        private System.Windows.Forms.Button button1;
     }
 }
 

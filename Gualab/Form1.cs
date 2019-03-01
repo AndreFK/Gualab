@@ -22,8 +22,12 @@ using System.Windows.Forms;
 
 namespace Gualab
 {
+
+
     public partial class Form1 : Form
     {
+
+        Parser p = new Parser();
         public Form1()
         {
             InitializeComponent();
@@ -78,6 +82,22 @@ namespace Gualab
         private void bc_tb_ValueChanged(object sender, EventArgs e)
         {
             bc_nud.Value = bc_tb.Value;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            p.crearf();
+
+            //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
+            p.parse(lr_dud.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString());
+            MessageBox.Show("Archvios creados y .scad modificado");
         }
     }
 }
