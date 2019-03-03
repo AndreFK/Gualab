@@ -28,7 +28,7 @@ namespace Gualab
             {
                 l = "Right";
             }
-            string text = File.ReadAllText("C:\\Users\\Usuario\\Documents\\Visual Studio 2017\\Projects\\Gualab\\Gualab\\Arm\\Arm.scad");
+            string text = File.ReadAllText("..\\..\\Arm\\Arm.scad");
             text = text.Replace(lf, "LeftRight = " + "\"" + l + "\"");
             text = text.Replace(hw, "HandWidth = " + h);
             text = text.Replace(al, "ArmLength = " + a);
@@ -40,12 +40,12 @@ namespace Gualab
         //La funcion crearf crea los nuevos archivos donde se van a escribir los nuevos valores
         public void crearf()
         {
-            string[] filePaths = Directory.GetFiles("C:\\Users\\Usuario\\Documents\\Visual Studio 2017\\Projects\\Gualab\\Gualab\\Arm");
+            string[] filePaths = Directory.GetFiles("..\\..\\Arm");
             foreach (var filename in filePaths)
             {
                 string file = filename.ToString();
 
-                string str = file.Replace("C:\\Users\\Usuario\\Documents\\Visual Studio 2017\\Projects\\Gualab\\Gualab\\Arm", "C:\\Users\\Usuario\\Documents\\Visual Studio 2017\\Projects\\Gualab\\Gualab\\Arm\\arm2");
+                string str = file.Replace("..\\..\\Arm", "..\\..\\Arm\\arm2");
                 if (!File.Exists(str))
                 {
                     File.Copy(file, str, true);

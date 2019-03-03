@@ -42,8 +42,8 @@
             this.ForeArmCircumference_lbl = new System.Windows.Forms.Label();
             this.BicepCircumference_lbl = new System.Windows.Forms.Label();
             this.LeftRight_lbl = new System.Windows.Forms.Label();
-            this.lr_dud = new System.Windows.Forms.DomainUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.crear_btn = new System.Windows.Forms.Button();
+            this.lr_cb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.hw_tb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hw_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.al_nud)).BeginInit();
@@ -247,33 +247,33 @@
             this.LeftRight_lbl.TabIndex = 137;
             this.LeftRight_lbl.Text = "Izquierda/Derecha";
             // 
-            // lr_dud
+            // crear_btn
             // 
-            this.lr_dud.BackColor = System.Drawing.SystemColors.Window;
-            this.lr_dud.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lr_dud.Location = new System.Drawing.Point(173, 86);
-            this.lr_dud.Name = "lr_dud";
-            this.lr_dud.Size = new System.Drawing.Size(93, 20);
-            this.lr_dud.TabIndex = 138;
-            this.lr_dud.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.crear_btn.Location = new System.Drawing.Point(299, 401);
+            this.crear_btn.Name = "crear_btn";
+            this.crear_btn.Size = new System.Drawing.Size(75, 23);
+            this.crear_btn.TabIndex = 139;
+            this.crear_btn.Text = "Generar";
+            this.crear_btn.UseVisualStyleBackColor = true;
+            this.crear_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // lr_cb
             // 
-            this.button1.Location = new System.Drawing.Point(324, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 139;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lr_cb.FormattingEnabled = true;
+            this.lr_cb.Location = new System.Drawing.Point(173, 83);
+            this.lr_cb.Name = "lr_cb";
+            this.lr_cb.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lr_cb.Size = new System.Drawing.Size(70, 21);
+            this.lr_cb.TabIndex = 140;
+            this.lr_cb.Text = "Izquierda";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lr_dud);
+            this.ClientSize = new System.Drawing.Size(661, 450);
+            this.Controls.Add(this.lr_cb);
+            this.Controls.Add(this.crear_btn);
             this.Controls.Add(this.LeftRight_lbl);
             this.Controls.Add(this.BicepCircumference_lbl);
             this.Controls.Add(this.ForeArmCircumference_lbl);
@@ -287,7 +287,9 @@
             this.Controls.Add(this.al_tb);
             this.Controls.Add(this.hw_nud);
             this.Controls.Add(this.hw_tb);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Gualab";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -319,8 +321,8 @@
         private System.Windows.Forms.Label ForeArmCircumference_lbl;
         private System.Windows.Forms.Label BicepCircumference_lbl;
         private System.Windows.Forms.Label LeftRight_lbl;
-        private System.Windows.Forms.DomainUpDown lr_dud;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button crear_btn;
+        private System.Windows.Forms.ComboBox lr_cb;
     }
 }
 

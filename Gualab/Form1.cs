@@ -12,7 +12,7 @@ using System.Windows.Forms;
 *Los objetos con el sufijo "_lbl" son labels 
 *Los objetos con sufijo "_tb" son trackbars
 *Los objetos con sufijo "_nud" son nummeric up down
-*Los objetos con sufijo "_dud" son domain up down
+*Los objetos con sufijo "_cb" son domain up down
 * 
 * hw = HandWidth (Ancho de la mano)
 * al = ArmLength (Largo del brazo)
@@ -32,12 +32,12 @@ namespace Gualab
         {
             InitializeComponent();
             //Prevenir que el usuario altere el valor del domain up down
-            lr_dud.ReadOnly = true;
+       
             //Agregar elemntos al domain up down
-            lr_dud.Items.Add("Derecha");
-            lr_dud.Items.Add("Izquierda");
+            lr_cb.Items.Add("Derecha");
+            lr_cb.Items.Add("Izquierda");
             //Valor inicial del domain up down
-            lr_dud.Text = "Izquierda";
+            lr_cb.Text = "Izquierda";
         }
 
         //Estas funciones cambian el valor de cada trackbar cuando cambia el valor de su respectivo numeric up down
@@ -88,7 +88,6 @@ namespace Gualab
         {
 
         }
-
         
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,7 +95,7 @@ namespace Gualab
             p.crearf();
 
             //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
-            p.parse(lr_dud.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString());
+            p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString());
             MessageBox.Show("Archvios creados y .scad modificado");
         }
     }

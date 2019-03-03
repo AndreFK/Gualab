@@ -7,19 +7,18 @@
 // The ISO thread code is by Trevor Moseley
 
 // Preview Each Part
-
 part = "Cuff"; // [ Cuff:Cuff, Arm1:Arm1, Arm2:Arm2, Arm3:Arm3, Arm4:Arm4, Palm:Palm,PalmTop:PalmTop, PalmBolt:PalmBolt, WristBoltNoCover:WristBoltNoCover, WristBoltWithCover:WristBoltWithCover, ElbowBolt:ElbowBolt, Tensioner:Tensioner, IndexFingerEnd:IndexFingerEnd, IndexFingerPhalanx:IndexFingerPhalanx, MiddleFingerEnd:MiddleFingerEnd, MiddleFingerPhalanx:MiddleFingerPhalanx, PinkyFingerEnd:PinkyFingerEnd, PinkyFingerPhalanx:PinkyFingerPhalanx, RingFingerEnd:RingFingerEnd, RingFingerPhalanx:RingFingerPhalanx, ThumbEnd:ThumbEnd, ThumbPhalanx:ThumbPhalanx, WhippleTreePrimary:WhippleTreePrimary, WhippleTreeSecondary:WhippleTreeSecondary, LatchSlider:LatchSlider, LatchPin:LatchPin, LatchTeeth:LatchTeeth, PencilHolderCover:PencilHolderCover, Hinge4Knuckles:Hinge4Knuckles, HingeIndexFinger:HingeIndexFinger, HingeMiddleFinger:HingeMiddleFinger, HingePinkyFinger:HingePinkyFinger, HingeRingFinger:HingeRingFinger, HingeThumb:HingeThumb, HingeThumbKnuckle:HingeThumbKnuckle, LatchHinge:LatchHinge, Thermoform1:Thermoform1, Thermoform2:Thermoform2, Thermoform3:Thermoform3, Cover1:Cover1, Cover2:Cover2, Cover3:Cover3, Cover4:Cover4 ]
 
 // Choose Left or Right Hand
-LeftRight = "Left"; // [Left,Right]
+LeftRight = "Right"; // [Left,Right]
 // Across all four knuckles (mm)
-HandWidth = 50; //[50:186]
+HandWidth = 150; //[50:186]
 // Wrist to elbow crease (mm)
-ArmLength = 141; //[141: 564]
+ArmLength = 341; //[141: 564]
 // Circumference of Forearm just below elbow crease (mm)
-ForearmCircumferencer = 135; //[135: 542]
+ForearmCircumferencer = 385; //[135: 542]
 // - Circumference of Bicep (mm)
-BicepCircumference = 147; //[147: 600]
+BicepCircumference = 297; //[147: 600]
 // Padding Thickness -inside forearm and cuff (mm)
 PaddingThickness = 2; //[0: 10]
 // How many pieces to divide the arm into 
@@ -59,8 +58,9 @@ $fn=30;
 
 print_part();
 
+
 module print_part( ) {
-    render(){
+    
     if(part == "ElbowBolt") {
         // ( dia,hi, headhi, headDiameter, hexDiameter)
         make_bolt(ElbowBoltDiameter, ArmScale * 6 + CuffScale * 10, ElbowBoltDiameter/2, ElbowBoltDiameter *3);
@@ -383,7 +383,7 @@ module print_part( ) {
     {
         PencilHolderCover();
     }
-}
+    
 }
 
 module PencilHolderCover() {
@@ -419,7 +419,7 @@ rotate([-90,0,0])
 }
 
 module MakeCuff() {
-    render(){
+    
     difference() {
         Cuff();
         
@@ -431,7 +431,7 @@ module MakeCuff() {
         translate([CuffScale  * 172.85, CuffScale  * -293.798, CuffScale  * 6.25 ]) rotate([0,90,0])  cylinder(d=TensionerBoltDiameter + 0.5, h = CuffScale  * 50, center=true, $fn=30);
     }
     
-} 
+   
 }
 
 
@@ -939,7 +939,7 @@ module LatchTeeth() {scale(ArmScale,ArmScale,ArmScale) import("o_LatchTeeth.stl"
 
 module LatchHole() {scale(ArmScale,ArmScale,ArmScale) import("o_LatchHingeHole.stl", convexity=3); }
 
-module Cuff() {render(){scale(CuffScale,CuffScale,CuffScale) import("o_Cuff.stl", convexity=3); }}
+module Cuff() {scale(CuffScale,CuffScale,CuffScale) import("o_Cuff.stl", convexity=3); }
 
 module Tensioner() {scale(CuffScale,CuffScale,CuffScale) import("o_Tensioner.stl", convexity=3); }
 
@@ -961,7 +961,5 @@ module Cover2of4() {scale([ForeArmCircumferenceScale,ArmScale,ArmScale]) import(
 
 module Cover3of4() {scale([ForeArmCircumferenceScale,ArmScale,ArmScale]) import("o_Cover3of4.stl", convexity=3); }
 
-module Cover4of4() {
-    render(){
-    scale([ForeArmCircumferenceScale,ArmScale,ArmScale]) import("o_Cover4of4.stl", convexity=3); }}
+module Cover4of4() {scale([ForeArmCircumferenceScale,ArmScale,ArmScale]) import("o_Cover4of4.stl", convexity=3); }
 
