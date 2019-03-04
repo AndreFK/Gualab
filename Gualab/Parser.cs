@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Gualab
 {
     class Parser
     {
-        //Varaible constantes con las valores que vamos a comparar en el archivo original
+       //Varaible constantes con las valores que vamos a comparar en el archivo original
         const string lf = "LeftRight = \"Left\"";
         const string hw = "HandWidth = 186";
         const string al = "ArmLength = 564";
@@ -28,29 +29,44 @@ namespace Gualab
             {
                 l = "Right";
             }
-            string text = File.ReadAllText("..\\..\\Arm\\Arm.scad");
+            string text = File.ReadAllText("..\\..\\ArchivosOriginales\\Original.scad");
             text = text.Replace(lf, "LeftRight = " + "\"" + l + "\"");
             text = text.Replace(hw, "HandWidth = " + h);
             text = text.Replace(al, "ArmLength = " + a);
-            text = text.Replace(fac, "ForearmCircumferencer = " + f);
+            text = text.Replace(fac, "ForearmCircumference = " + f);
             text = text.Replace(bc, "BicepCircumference = " + b);
-            File.WriteAllText("C:\\Users\\Usuario\\Documents\\Visual Studio 2017\\Projects\\Gualab\\Gualab\\Arm\\arm2\\Arm.scad", text);
+            File.WriteAllText("..\\..\\ArchivosOriginales\\ArchivosModificados\\Modificado.scad", text);
         }
 
         //La funcion crearf crea los nuevos archivos donde se van a escribir los nuevos valores
         public void crearf()
         {
-            string[] filePaths = Directory.GetFiles("..\\..\\Arm");
+            string[] filePaths = Directory.GetFiles("..\\..\\ArchivosOriginales");
             foreach (var filename in filePaths)
             {
                 string file = filename.ToString();
 
-                string str = file.Replace("..\\..\\Arm", "..\\..\\Arm\\arm2");
+                string str = file.Replace("..\\..\\ArchivosOriginales", "..\\..\\ArchivosOriginales\\ArchivosModificados");
                 if (!File.Exists(str))
                 {
                     File.Copy(file, str, true);
                 }
             }
+        }
+
+        public void EjecutarRender()
+        {
+            
+            string workingDirectory = Environment.CurrentDirectory;
+            string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+            string commandToExecute = Path.Combine(projectDirectory, "Automatizacion.bat");
+            string workingFolder = Path.GetDirectoryName(commandToExecute);
+
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = commandToExecute;
+            proc.StartInfo.WorkingDirectory = workingFolder;
+            proc.Start();
         }
     }
 }
