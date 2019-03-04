@@ -10,15 +10,15 @@
 part = "Cuff"; // [ Cuff:Cuff, Arm1:Arm1, Arm2:Arm2, Arm3:Arm3, Arm4:Arm4, Palm:Palm,PalmTop:PalmTop, PalmBolt:PalmBolt, WristBoltNoCover:WristBoltNoCover, WristBoltWithCover:WristBoltWithCover, ElbowBolt:ElbowBolt, Tensioner:Tensioner, IndexFingerEnd:IndexFingerEnd, IndexFingerPhalanx:IndexFingerPhalanx, MiddleFingerEnd:MiddleFingerEnd, MiddleFingerPhalanx:MiddleFingerPhalanx, PinkyFingerEnd:PinkyFingerEnd, PinkyFingerPhalanx:PinkyFingerPhalanx, RingFingerEnd:RingFingerEnd, RingFingerPhalanx:RingFingerPhalanx, ThumbEnd:ThumbEnd, ThumbPhalanx:ThumbPhalanx, WhippleTreePrimary:WhippleTreePrimary, WhippleTreeSecondary:WhippleTreeSecondary, LatchSlider:LatchSlider, LatchPin:LatchPin, LatchTeeth:LatchTeeth, PencilHolderCover:PencilHolderCover, Hinge4Knuckles:Hinge4Knuckles, HingeIndexFinger:HingeIndexFinger, HingeMiddleFinger:HingeMiddleFinger, HingePinkyFinger:HingePinkyFinger, HingeRingFinger:HingeRingFinger, HingeThumb:HingeThumb, HingeThumbKnuckle:HingeThumbKnuckle, LatchHinge:LatchHinge, Thermoform1:Thermoform1, Thermoform2:Thermoform2, Thermoform3:Thermoform3, Cover1:Cover1, Cover2:Cover2, Cover3:Cover3, Cover4:Cover4 ]
 
 // Choose Left or Right Hand
-LeftRight = "Right"; // [Left,Right]
+LeftRight = "Left"; // [Left,Right]
 // Across all four knuckles (mm)
 HandWidth = 150; //[50:186]
 // Wrist to elbow crease (mm)
-ArmLength = 341; //[141: 564]
+ArmLength = 250; //[141: 564]
 // Circumference of Forearm just below elbow crease (mm)
-ForearmCircumferencer = 385; //[135: 542]
+ForearmCircumferencer = 350; //[135: 542]
 // - Circumference of Bicep (mm)
-BicepCircumference = 297; //[147: 600]
+BicepCircumference = 450; //[147: 600]
 // Padding Thickness -inside forearm and cuff (mm)
 PaddingThickness = 2; //[0: 10]
 // How many pieces to divide the arm into 
