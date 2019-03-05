@@ -28,6 +28,7 @@ namespace Gualab
     {
 
         Parser p = new Parser();
+        bool checkGenerar = false;
         public Form1()
         {
             InitializeComponent();
@@ -93,10 +94,23 @@ namespace Gualab
         private void button1_Click(object sender, EventArgs e)
         {
             p.crearf();
-
             //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
             p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString());
             MessageBox.Show("Archvios creados y .scad modificado");
+            checkGenerar = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (checkGenerar)
+            {
+                p.EjecutarRender();
+                checkGenerar = false;
+            }
+            else
+            {
+                MessageBox.Show("Debe generar los archivos primero antes de Redenderizar");
+            }
         }
     }
 }

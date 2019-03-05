@@ -44,6 +44,7 @@
             this.LeftRight_lbl = new System.Windows.Forms.Label();
             this.crear_btn = new System.Windows.Forms.Button();
             this.lr_cb = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hw_tb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hw_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.al_nud)).BeginInit();
@@ -249,7 +250,7 @@
             // 
             // crear_btn
             // 
-            this.crear_btn.Location = new System.Drawing.Point(299, 401);
+            this.crear_btn.Location = new System.Drawing.Point(227, 387);
             this.crear_btn.Name = "crear_btn";
             this.crear_btn.Size = new System.Drawing.Size(75, 23);
             this.crear_btn.TabIndex = 139;
@@ -267,11 +268,22 @@
             this.lr_cb.TabIndex = 140;
             this.lr_cb.Text = "Izquierda";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(350, 387);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 23);
+            this.button1.TabIndex = 141;
+            this.button1.Text = "Redenderizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lr_cb);
             this.Controls.Add(this.crear_btn);
             this.Controls.Add(this.LeftRight_lbl);
@@ -323,6 +335,7 @@
         private System.Windows.Forms.Label LeftRight_lbl;
         private System.Windows.Forms.Button crear_btn;
         private System.Windows.Forms.ComboBox lr_cb;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -1,0 +1,5 @@
+-Edit system environment variables (editar variables del entorno del sistema)
+-Environment Variables (Variables de entorno)
+-En systema varibale elegir "Path" y darle Edit
+-New y se ingresa el path de la carpeta donde se encuentra instalado OpenScad (C:\Program Files\OpenSCAD)
+ 
