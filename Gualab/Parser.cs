@@ -53,16 +53,19 @@ namespace Gualab
                 }
             }
         }
-
+		
+		//Funcion que manda ejecutar el comando de openscad en la terminal (Archivo .bat llamado automatizacion)
         public void EjecutarRender()
         {
-            
+            //directorio de ejecutable
             string workingDirectory = Environment.CurrentDirectory;
+			// directorio del proyecto
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
+			//Direccion del archivo .bat
             string commandToExecute = Path.Combine(projectDirectory, "Automatizacion.bat");
             string workingFolder = Path.GetDirectoryName(commandToExecute);
 
-
+			// ejecuta el archivo .bat
             Process proc = new Process();
             proc.StartInfo.FileName = commandToExecute;
             proc.StartInfo.WorkingDirectory = workingFolder;
