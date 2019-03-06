@@ -12,19 +12,13 @@ part = "Cuff"; // [ Cuff:Cuff, Arm1:Arm1, Arm2:Arm2, Arm3:Arm3, Arm4:Arm4, Palm:
 // Choose Left or Right Hand
 LeftRight = "Left"; // [Left,Right]
 // Across all four knuckles (mm)
-HandWidth = 186; //[50:186]
+HandWidth = 50; //[50:186]
 // Wrist to elbow crease (mm)
-ArmLength = 564; //[141: 564]
+ArmLength = 141; //[141: 564]
 // Circumference of Forearm just below elbow crease (mm)
-<<<<<<< HEAD
-ForearmCircumference = 542; //[135: 542]
-// - Circumference of Bicep (mm)
-BicepCircumference = 600; //[147: 600]
-=======
-ForearmCircumference = 271; //[135: 542]
+ForearmCircumference = 135; //[135: 542]
 // - Circumference of Bicep (mm)
 BicepCircumference = 147; //[147: 600]
->>>>>>> 27a7413d1be01c921464dd5dbb974b2c327f62dc
 // Padding Thickness -inside forearm and cuff (mm)
 PaddingThickness = 2; //[0: 10]
 // How many pieces to divide the arm into 

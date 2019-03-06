@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,8 @@ namespace Gualab
     {
 
         Parser p = new Parser();
-        bool checkGenerar = false;
+		//verifica si se generaron los archivos
+        
         public Form1()
         {
             InitializeComponent();
@@ -97,18 +99,21 @@ namespace Gualab
             //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
             p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString());
             MessageBox.Show("Archvios creados y .scad modificado");
-            checkGenerar = true;
+            //checkGenerar = true;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (checkGenerar)
+            //Verifica si el archivo generado existe
+            if (File.Exists("..\\..\\ArchivosOriginales\\ArchivosModificados\\Modificado.scad"))
             {
+				//los archivos redenderizados estaran en una capeta llamada ArchivosSTL(Nota: No borrarla) PATH:  ..\ArchivosOriginales\ArchivosModificados\ArchivosSTL
                 p.EjecutarRender();
-                checkGenerar = false;
+                
             }
             else
             {
+				
                 MessageBox.Show("Debe generar los archivos primero antes de Redenderizar");
             }
         }

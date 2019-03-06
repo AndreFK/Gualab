@@ -17,3 +17,4 @@ C:\Users\MGFE\Desktop\Gualab\Gualab\obj\Debug\Gualab.csproj.GenerateResource.cac
 C:\Users\MGFE\Desktop\Gualab\Gualab\obj\Debug\Gualab.csproj.CoreCompileInputs.cache
 C:\Users\MGFE\Desktop\Gualab\Gualab\obj\Debug\Gualab.exe
 C:\Users\MGFE\Desktop\Gualab\Gualab\obj\Debug\Gualab.pdb
+C:\Users\MGFE\Desktop\Gualab\Gualab\obj\Debug\Gualab.csprojResolveAssemblyReference.cache
