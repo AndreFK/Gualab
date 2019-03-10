@@ -120,10 +120,10 @@ namespace Gualab
                 string path = p.npath(iniciales);
 
                 //Crearf crea el nuevo archvio scad en el nuevo path
-                p.crearf(path);
+                p.crearf(path, iniciales_txt.Text);
 
                 //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
-                p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString(), pd_nud.Value.ToString(), path);
+                p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString(), pd_nud.Value.ToString(), p.getFile());
 
                 MessageBox.Show("Archvio creado en " + path);
             }
@@ -137,7 +137,7 @@ namespace Gualab
             if (File.Exists(p.getFile())) 
             {
 				//los archivos redenderizados estaran en una capeta llamada ArchivosSTL(Nota: No borrarla) PATH:  ..\ArchivosOriginales\ArchivosModificados\ArchivosSTL
-                p.EjecutarRender();
+                p.EjecutarRender(iniciales_txt.Text);
                 
             }
             else

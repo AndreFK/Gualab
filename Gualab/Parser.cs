@@ -59,41 +59,60 @@ namespace Gualab
             this.pathnew = fd.SelectedPath.ToString();
 
             this.filenew = fd.SelectedPath.ToString() + "\\" + usuario + "_Arm.scad"; //El "\\Original.scad" es el nombre del archivo a donde se va a escribir el codigo
-            return filenew;
+            return pathnew;
         }
 
         //La funcion crearf crea el nuevo archivo scad donde la funcion parse va a escribir el nuevo codigo
-        public void crearf(string path)
+        public void crearf(string path, string user)
         {
+
             string[] filePaths = Directory.GetFiles("..\\..\\ArchivosOriginales");
             foreach (var filename in filePaths)
             {
                 string file = filename.ToString();
-                File.Copy(file, path, true);
+
+                string str = file.Replace("..\\..\\ArchivosOriginales", path);
+                if (!File.Exists(str))
+                {
+                        File.Copy(file, str, true);          
+                }
             }
+            Directory.CreateDirectory(path + "..\\" + user + "_Renders");
+            File.Delete(path + "..\\Original.scad");
         }
 		
+        private void nbatch(string path)
+        {
+            string file = "..\\..\\prueba.bat";
+            File.Copy(file, path, true);
+            
+        }
+
 		//Funcion que manda ejecutar el comando de openscad en la terminal (Archivo .bat llamado automatizacion)
-        public void EjecutarRender()
+        public void EjecutarRender(string user)
         {   /*
             Esto de aqui abajo es lo que quiero hacer para reescribir el batc file. Pero antes hay que 
             hacer una copia exacta del batchfile y hacer el text.replace en esa copia;
+            */
+
+            nbatch("..\\..\\nuevo.bat");
 
             string path = pathnew.Replace("\\", "/");
             string file = filenew.Replace("\\", "/");
             
-            string text = File.ReadAllText(Aqui es donde iria el directorio de la copia del nuevo batch file);
+            string text = File.ReadAllText("..\\..\\nuevo.bat");
 
-            text = text.Replace("ArchivosModificados / ArchivosSTL", path);
+            text = text.Replace("ArchivosModificados/ArchivosSTL", path + "/" +user+ "_Renders");
             text = text.Replace("ArchivosModificados/Original.scad", file);
-            */
-
+            File.WriteAllText("..\\..\\nuevo.bat", text);
+            
+            
             //directorio de ejecutable
             string workingDirectory = Environment.CurrentDirectory;
 			// directorio del proyecto
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
             MessageBox.Show(projectDirectory);
-            string commandToExecute = Path.Combine(projectDirectory, "prueba.bat");
+            string commandToExecute = Path.Combine(projectDirectory, "nuevo.bat");
 			//Direccion del archivo .bat
             //string commandToExecute = Path.Combine(projectDirectory, "Automatizacion.bat");
             string workingFolder = Path.GetDirectoryName(commandToExecute);
