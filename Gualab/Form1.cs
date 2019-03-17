@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+//Hecho por André Figueroa y Mario Flores
 
 /*
 *Los objetos con el sufijo "_lbl" son labels 
@@ -110,7 +105,7 @@ namespace Gualab
             //Solo se podra crear un archivo scad si ya se ingresaron las inciales del usuario
             if (string.IsNullOrEmpty(iniciales_txt.Text))
             {
-                MessageBox.Show("Ingrese las inciales del usuario de la protesis");
+                MessageBox.Show("Ingrese las iniciales del usuario de la protesis");
             }
             else
             {
@@ -125,7 +120,7 @@ namespace Gualab
                 //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
                 p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString(), pd_nud.Value.ToString(), p.getFile());
 
-                MessageBox.Show("Archvio creado en " + path);
+                MessageBox.Show("Archivo creado en " + path);
             }
         }
 

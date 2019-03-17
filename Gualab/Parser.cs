@@ -83,7 +83,7 @@ namespace Gualab
 		
         private void nbatch(string path)
         {
-            string file = "..\\..\\prueba.bat";
+            string file = "..\\..\\Automatizacion.bat";
             File.Copy(file, path, true);
             
         }
@@ -111,7 +111,6 @@ namespace Gualab
             string workingDirectory = Environment.CurrentDirectory;
 			// directorio del proyecto
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.FullName;
-            MessageBox.Show(projectDirectory);
             string commandToExecute = Path.Combine(projectDirectory, "nuevo.bat");
 			//Direccion del archivo .bat
             //string commandToExecute = Path.Combine(projectDirectory, "Automatizacion.bat");

@@ -17,7 +17,7 @@ echo.
 for /l %%f in (0,1,1) do (
 echo Creando stl...
 echo.
-openscad.com -o "C:/Users/Usuario/Desktop/TestFILE/AF_Renders/!arrayline[%%f]!.stl" -D "part=\"!arrayline[%%f]!\"" C:/Users/Usuario/Desktop/TestFILE/AF_Arm.scad
+openscad.com -o "C:/Users/Usuario/Desktop/S/NC_Renders/!arrayline[%%f]!.stl" -D "part=\"!arrayline[%%f]!\"" C:/Users/Usuario/Desktop/S/NC_Arm.scad
 echo archivo !arrayline[%%f]!.stl creado
 echo.
 )
