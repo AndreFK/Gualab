@@ -65,27 +65,40 @@ namespace Gualab
         //La funcion crearf crea el nuevo archivo scad donde la funcion parse va a escribir el nuevo codigo
         public void crearf(string path, string user)
         {
-
-            string[] filePaths = Directory.GetFiles("..\\..\\ArchivosOriginales");
-            foreach (var filename in filePaths)
+            try
             {
-                string file = filename.ToString();
-
-                string str = file.Replace("..\\..\\ArchivosOriginales", path);
-                if (!File.Exists(str))
+                string[] filePaths = Directory.GetFiles("..\\..\\ArchivosOriginales");
+                foreach (var filename in filePaths)
                 {
-                        File.Copy(file, str, true);          
+                    string file = filename.ToString();
+
+                    string str = file.Replace("..\\..\\ArchivosOriginales", path);
+                    if (!File.Exists(str))
+                    {
+
+                        File.Copy(file, str, true);
+                    }
                 }
+                Directory.CreateDirectory(path + "..\\" + user + "_Renders");
+                File.Delete(path + "..\\Original.scad");
             }
-            Directory.CreateDirectory(path + "..\\" + user + "_Renders");
-            File.Delete(path + "..\\Original.scad");
+            catch
+            {
+                MessageBox.Show("Archivo Original no encontrado");
+            }
         }
 		
         private void nbatch(string path)
         {
             string file = "..\\..\\Automatizacion.bat";
-            File.Copy(file, path, true);
-            
+            try
+            {
+                File.Copy(file, path, true);
+            }
+            catch
+            {
+                MessageBox.Show("Archivo de Automatizacion.bat no encontrado");
+            }
         }
 
 		//Funcion que manda ejecutar el comando de openscad en la terminal (Archivo .bat llamado automatizacion)
