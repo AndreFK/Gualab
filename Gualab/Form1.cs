@@ -116,8 +116,6 @@ namespace Gualab
 
                 //Crearf crea el nuevo archvio scad en el nuevo path
                 p.crearf(path, iniciales_txt.Text);
-
-                //En la funcion parse los parametros se tiene que enviar en este orden exacto para que funcione. Quiza lo arregle mas tarde para que no importe el orden
                 p.parse(lr_cb.Text, hw_nud.Value.ToString(), al_nud.Value.ToString(), fac_nud.Value.ToString(), bc_nud.Value.ToString(), pd_nud.Value.ToString(), p.getFile());
 
                 MessageBox.Show("Archivo creado en " + path);
